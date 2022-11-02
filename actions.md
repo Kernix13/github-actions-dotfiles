@@ -175,6 +175,69 @@ Note: You can run multiple versions of node by changing the version number
 
 > WTF? Where is the super simple Actions tutorial for beginners?
 
+---
+
+Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [Master GitHub Actions Tutorial](https://www.youtube.com/playlist?list=PL_RrEj88onS-um2xFy01sY46ik_2yt_EQ), 11 videos
+
+- On Actions tab choose _Static HTML_ under **Pages**
+- Change the file name and `name` property if you want
+- Spacing is crucial!
+- NO - I went to Marketplace and chose [Super-Linter](https://github.com/marketplace/actions/super-linter)
+
+```yml
+---
+#################################
+#################################
+## Super Linter GitHub Actions ##
+#################################
+#################################
+name: Lint Code Base
+
+#############################
+# Start the job on all push #
+#############################
+on:
+  push:
+    branches-ignore: [master, main]
+    # Remove the line above to run when pushing to master
+  pull_request:
+    branches: [master, main]
+
+###############
+# Set the Job #
+###############
+jobs:
+  build:
+    # Name the Job
+    name: Lint Code Base
+    # Set the agent to run on
+    runs-on: ubuntu-latest
+
+    ##################
+    # Load all steps #
+    ##################
+    steps:
+      ##########################
+      # Checkout the code base #
+      ##########################
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper
+          # list of changed files within `super-linter`
+          fetch-depth: 0
+
+      ################################
+      # Run Linter against code base #
+      ################################
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.

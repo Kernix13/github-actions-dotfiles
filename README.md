@@ -18,24 +18,24 @@ I have some sample/template code for each file/folder type
 
 In the root I have `pull_request_template.md`. In `/workflows` I have `build.yml` as an example (DELETED build.yml, added the code at bottom of actions.md).
 
-## .husky
+### .husky
 
 I have a `.gitignore` which has what everyone has in it: `_`. Then I have `pre-commit` which also has the same code that everyone has for that file.
 
-## .vscode
+### .vscode
 
 I have `settings.json` for a sample from who-knows-where.
 
-## Root folder dotfiles
+### Root folder dotfiles
 
 I have the following:
 
 1. `.editorconfig`: do you need this if you have `.vscode`?
-1. `.eslintrc.json`: I've also seen `.eslintignore` but I do nt have that file
+1. `.eslintrc.json`: I've also seen `.eslintignore` but I do not have that file
 1. `.prettierignore`: They always seem to have the `build` folder in here but freeCodeCamp has a massive one
 1. `.prettierrc.json`: I've also seen this without any extension and with `.js`
 
-## Markdown files
+### Markdown files
 
 1. `actions.md`: my notes from the videos I watched
 1. `dotfiles.md`: notes on the various files
