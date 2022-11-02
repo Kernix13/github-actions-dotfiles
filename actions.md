@@ -252,6 +252,10 @@ on:
     branches: [master, main]
 ```
 
+- Added an unused variable to `index.js` and the linting FAILED! Removed it, pushed again and it FAILED AGAIN
+
+> OKAY, I LIKE ACTIONS!
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.
