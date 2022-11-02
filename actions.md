@@ -185,7 +185,6 @@ Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [
 - NO - I went to Marketplace and chose [Super-Linter](https://github.com/marketplace/actions/super-linter)
 
 ```yml
----
 #################################
 #################################
 ## Super Linter GitHub Actions ##
@@ -242,7 +241,16 @@ jobs:
 - But I had changes in `main` locally and I was able to push them without an error
 - That may have been because it was not merged yet.
 - I tried `git pull upstream master` but got an error that there was no upsteam. I read an Atlassian article, but then tried `git pull` and that worked (I have a lot more to learn about git)
-- Pushed the changes
+- Pushed the changes - didn't trigger anything, then I removed `main` from the followingpart of the yml file:
+
+```yml
+on:
+  push:
+    branches-ignore: [master, main]
+    # Remove the line above to run when pushing to master
+  pull_request:
+    branches: [master, main]
+```
 
 ## Work flow rules
 
