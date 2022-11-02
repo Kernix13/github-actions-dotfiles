@@ -238,6 +238,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+- I merged that new file from GitHub which I added to a branch called `linter-action` and I saw the checks running. Then I merged it.
+- But I had changes in `main` locally and I was able to push them without an error
+- That may have been because it was not merged yet.
+- I tried `git pull upstream master` but got an error that there was no upsteam. I read an Atlassian article, but then tried `git pull` and that worked (I have a lot more to learn about git)
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.
