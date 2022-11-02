@@ -1,6 +1,6 @@
-[![GitHub Super-Linter](https://github.com/Kernix13/github-actions-dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-
 # Tutorial on GitHub Actions and Dotfiles
+
+[![GitHub Super-Linter](https://github.com/Kernix13/github-actions-dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 My attempt at answering:
 
