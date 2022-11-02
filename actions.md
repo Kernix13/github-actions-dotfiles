@@ -254,6 +254,10 @@ on:
 
 - Added an unused variable to `index.js` and the linting FAILED! Removed it, pushed again and it FAILED AGAIN
 
+```js
+const logString = `Dotfiles must be important because it is hard getting good notes on them`;
+```
+
 > OKAY, I LIKE ACTIONS!
 
 ## Work flow rules

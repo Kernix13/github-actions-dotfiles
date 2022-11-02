@@ -1,3 +1,3 @@
-const logString = `Dotfiles must be important because it is hard getting good notes on them`;
+const arr = [1, 2, 3];
 
-console.log(logString);
+console.log(arr[1]);
