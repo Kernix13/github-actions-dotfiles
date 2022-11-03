@@ -184,6 +184,8 @@ Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [
 - Spacing is crucial!
 - NO - I went to Marketplace and chose [Super-Linter](https://github.com/marketplace/actions/super-linter)
 
+### Super-Linter
+
 ```yml
 #################################
 #################################
@@ -255,10 +257,20 @@ on:
 - Added an unused variable to `index.js` and the linting FAILED! Removed it, pushed again and it FAILED AGAIN
 
 ```js
+// I tried changing to single quotes on for prettier in settings.json
 const logString = `Dotfiles must be important because it is hard getting good notes on them`;
+console.log(logString);
 ```
 
 > OKAY, I LIKE ACTIONS!
+
+Things to check in Super-Linter `linter.yml`:
+
+`env` section:
+
+- `DEFAULT_BRANCH`: changed mine from `master` to `main`
+- you don't want your PR to fail because of the linter: add `DISABLE_ERRORS: true` but this is not recommended
+- use `VALIDATE_ALL_CODEBASE: false` so that it doesn't check your entire codebase which would tale a long time for large repos - When set to `false`, only new or edited files will be parsed for validation
 
 ## Work flow rules
 
