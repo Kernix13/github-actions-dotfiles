@@ -14,6 +14,7 @@
    1. [Video 6](#video-6)
    1. [Super-Linter](#super-linter)
 1. [GitHub Actions Categories](#github-actions-categories)
+   1. [Without Verified creator filter](#without-verified-creator-filter)
 1. [Work flow rules](#work-flow-rules)
 1. [Example YAML Code](#example-yaml-code)
 
@@ -325,7 +326,6 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 1. **Monitoring**: Check out [Load runner information](https://github.com/marketplace/actions/load-runner-information)
 1. **Project management**: A lot dealing with Jira, also [Teamwork GitHub Sync](https://github.com/marketplace/actions/teamwork-github-sync), [**Issue comment tag**](https://github.com/marketplace/actions/issue-comment-tag), and [Add to GitHub projects](https://github.com/marketplace/actions/add-to-github-projects)
 1. **Publishing**: 17 results, a few each for Google, Microsoft, and Github Pages of which [Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-github-pages-site) and [Configure GitHub Pages](https://github.com/marketplace/actions/configure-github-pages) look good
-1. **Recently added**: 0 verified results
 1. **Security**: 100 results, look into [Kubernetes Security Config Watch](https://github.com/marketplace/actions/kubernetes-security-config-watch) and [Authenticate to Google Cloud](https://github.com/marketplace/actions/authenticate-to-google-cloud)
 1. **Support**: 7 Jira results
 1. **Testing**: 26 results, 7 dealing with Parasoft, check out [RapidAPI Testing Trigger](https://github.com/marketplace/actions/rapidapi-testing-trigger)
@@ -337,8 +337,35 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 ### Actions I used
 
 1. Super Linter: It works but I it keeps failing. Look into the docs.
-1. Release-Notes-Preview: Did not run.
-1. First Interaction: Failed / did not even run.
+1. Release-Notes-Preview: Did not run: _This workflow has no runs yet_
+1. First Interaction: Failed / did not even run. File: `actions.yml`, see code below - removed `actions.yml`.
+
+### Without Verified creator filter
+
+I tried 3 Actions, 1 had issues, and 1 did not run. Now I'm sorting by Most Stars (1st page results only):
+
+1. **API management**: 307 results , [Fetch API Data Action](https://github.com/marketplace/actions/fetch-api-data)
+1. **Chat**: 320 results, a lot of Slack Actions, [Issues Translator](https://github.com/marketplace/actions/issues-translator), [Actiond for Discord](https://github.com/marketplace/actions/actions-for-discord), [Action Status Discord](https://github.com/marketplace/actions/actions-status-discord), [Twitter Action](https://github.com/marketplace/actions/twitter-action)
+1. **Code quality**: [](),
+1. **Code review**: [](),
+1. **Continuous integration**: 5354 results, too many
+   1. Container CI: 934 results
+   1. Game CI: 87 result
+   1. Mobile CI: 157 results
+1. **Dependency management**: 713 results, [NPM or Yarn install with caching](https://github.com/marketplace/actions/npm-or-yarn-install-with-caching), [Dependency review](https://github.com/marketplace/actions/dependency-review), [Install PHP Dependencies with Composer](https://github.com/marketplace/actions/install-php-dependencies-with-composer), [The PHP Security Checker](https://github.com/marketplace/actions/the-php-security-checker)
+1. **Deployment**: 3076 results
+1. **IDEs**: 36 results, don't see any I would use
+1. **Learning**: 117 results, [NodeJS Action Template](https://github.com/marketplace/actions/nodejs-action-template)
+1. **Localization**: 70 results, [Translation Action](https://github.com/marketplace/actions/translation-action), [Pot File Generator For WordPress](https://github.com/marketplace/actions/pot-file-generator-for-wordpress) and [WordPress .pot File Generator](https://github.com/marketplace/actions/wordpress-pot-file-generator)
+1. **Mobile**: 94 results, [Send Push Notification](https://github.com/marketplace/actions/send-push-notification)
+1. **Monitoring**: 311 results, [GraphQL Inspector](https://github.com/marketplace/actions/graphql-inspector), [Lighthouse check](https://github.com/marketplace/actions/lighthouse-check), [Send email](https://github.com/marketplace/actions/send-email), [github-repo-stats](https://github.com/marketplace/actions/github-repo-stats), [Profile readme stats](https://github.com/marketplace/actions/profile-readme-stats)
+1. **Project management**: 913 results, [Create release](https://github.com/marketplace/actions/create-release), [GitHub deployments](https://github.com/marketplace/actions/github-deployments), [GitHub Project Automation+](https://github.com/marketplace/actions/github-project-automation) and [Add To GitHub projects](https://github.com/marketplace/actions/add-to-github-projects), [Pull request stats](https://github.com/marketplace/actions/pull-request-stats)
+1. **Publishing**: 1723 results, [Blog post workflow](https://github.com/marketplace/actions/blog-post-workflow), [WordPress Plugin Deploy](https://github.com/marketplace/actions/wordpress-plugin-deploy), [Install SSH Key](https://github.com/marketplace/actions/install-ssh-key), [Deploy to Heroku](https://github.com/marketplace/actions/deploy-to-heroku)
+1. **Security**: 769 results, [Is Website vulnerable](https://github.com/marketplace/actions/is-website-vulnerable), [Authenticate to Google Cloud](https://github.com/marketplace/actions/authenticate-to-google-cloud),
+1. **Support**: 214 results, [Pull Request title rules](https://github.com/marketplace/actions/pull-request-title-rules), [Git Commit Data](https://github.com/marketplace/actions/git-commit-data)
+1. **Testing**: 1142 results, [markdown-link-check](https://github.com/marketplace/actions/markdown-link-check)
+1. **Utilities**: 4320 results, [Metrics embed](https://github.com/marketplace/actions/metrics-embed), [Setup PHP action](https://github.com/marketplace/actions/metrics-embed), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [**GitHub-Profile-Summary-Cards**](https://github.com/marketplace/actions/github-profile-summary-cards)
+   1. Backup utilities: 87 results, [google-drive-upload-git-action](https://github.com/marketplace/actions/google-drive-upload-git-action), [Mirror to BitBucket GitHub Action](https://github.com/marketplace/actions/mirror-to-bitbucket-github-action), [repo-backup-arweave](https://github.com/marketplace/actions/repo-backup-arweave)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -469,6 +496,25 @@ jobs:
     - with:
         node-version: '16'
     - run: node index.js
+```
+
+First Interaction `action.yml`
+
+```yml
+name: 'First interaction'
+description: 'Greet new contributors when they create their first issue or open their first pull request'
+author: 'GitHub'
+inputs:
+  repo-token:
+    description: 'Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
+  issue-message:
+    description: 'Congratulations for posting your first issue!'
+  pr-message:
+    description: 'Congratulations, this is your first pull request!'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
