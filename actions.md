@@ -78,15 +78,15 @@ Notes from various YouTube videos.
 - Then `index.js`:
 
 ```js
-const core = require("@actions/core");
-const github = require("@actions/github");
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 try {
   // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput("who-to-greet");
+  const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
   const time = new Date().toTimeString();
-  core.setOutput("time", time);
+  core.setOutput('time', time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2);
   console.log(`The event payload: ${payload}`);
@@ -310,7 +310,7 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 
 1. **API management**: Check out [action-github-app-token](https://github.com/marketplace/actions/action-github-app-token), uses GitHub Apps to fetch a GitHub auth token for a GitHub App installation. The GitHub App is used to authorize API access across multiple repositories - `yarn` only?
 1. **Chat**: Check out [slack-send](https://github.com/marketplace/actions/slack-send) and maybe [Twillio SMS](https://github.com/marketplace/actions/twilio-sms)
-1. **Code quality**: Check out [action-git-diff-suggestions](https://github.com/marketplace/actions/action-git-diff-suggestions) (_issue with this one_), [**validate-license-action**](https://github.com/marketplace/actions/validate-license-action) (Validate a license file is one of the allowed licenses), [IntelliCode Team Completions](https://github.com/marketplace/actions/intellicode-team-completions), and [**Super-Linter**](https://github.com/marketplace/actions/super-linter)
+1. **Code quality**: Check out [action-git-diff-suggestions](https://github.com/marketplace/actions/action-git-diff-suggestions) (_issue with this one_), [validate-license-action](https://github.com/marketplace/actions/validate-license-action) (Validate a license file is one of the allowed licenses), [IntelliCode Team Completions](https://github.com/marketplace/actions/intellicode-team-completions), and [**Super-Linter**](https://github.com/marketplace/actions/super-linter)
 1. **Code review**: `action-git-diff-suggestions` is also in this category, [SecureStack Application Bill of Materials (ABOM/SBOM)](https://github.com/marketplace/actions/securestack-application-bill-of-materials-abom-sbom), [Kubernetes Security Config Watch](https://github.com/marketplace/actions/kubernetes-security-config-watch), and [**Release-Notes-Preview**](https://github.com/marketplace/actions/release-notes-preview)
 1. **Continuous integration**: 166 results, too many to go through although Git Version looks good
    1. Container CI: 41 results
@@ -332,7 +332,13 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 1. **Utilities**: 72 results, the most interesting Action titles: [Close stale issues](https://github.com/marketplace/actions/close-stale-issues), [**First interaction**](https://github.com/marketplace/actions/first-interaction), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [GitHub GraphQL API Query](https://github.com/marketplace/actions/github-graphql-api-query), [**GitHub API Request**](https://github.com/marketplace/actions/github-api-request), [Release-Notes-Preview](https://github.com/marketplace/actions/release-notes-preview), [Issue comment tag](https://github.com/marketplace/actions/issue-comment-tag), [Labeler](https://github.com/marketplace/actions/labeler), and [GitHub Script](https://github.com/marketplace/actions/github-script)
    1. Backup utilities: 0 results
 
-**NOTES**: `validate-license-action` has not been updated in 4 years, `Release-Notes-Preview` in 3 years (I added it anyway), `Issue comment tag` requires a GitHub App
+**NOTES**: `validate-license-action` has not been updated in 4 years, `Release-Notes-Preview` in 3 years (I added it anyway), `Issue comment tag` requires a GitHub App.
+
+### Actions I used
+
+1. Super Linter: It works but I it keeps failing. Look into the docs.
+1. Release-Notes-Preview: Did not run.
+1. First Interaction: Failed / did not even run.
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
@@ -364,19 +370,19 @@ From Ania's video:
 
 ```yml
 # action.yml
-name: "Hello World"
-description: "Greet someone and record the time"
+name: 'Hello World'
+description: 'Greet someone and record the time'
 inputs:
   who-to-greet: # id of input
-    description: "Who to greet"
+    description: 'Who to greet'
     required: true
-    default: "World"
+    default: 'World'
 outputs:
   time: # id of output
-    description: "The time we greeted you"
+    description: 'The time we greeted you'
 runs:
-  using: "node12"
-  main: "index.js"
+  using: 'node12'
+  main: 'index.js'
 ```
 
 ```yml
@@ -392,7 +398,7 @@ jobs:
         id: hello
         uses: Kernix13/my-javascript-action@v1
         with:
-          who-to-greet: "Jim"
+          who-to-greet: 'Jim'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
@@ -461,7 +467,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
     - with:
-        node-version: "16"
+        node-version: '16'
     - run: node index.js
 ```
 

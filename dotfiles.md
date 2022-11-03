@@ -129,19 +129,18 @@ After all that create the config files
 
 dotfiles:
 
-- `.editorconfig` | check out [EditorConfig](https://editorconfig.org/) and Eddie had one of these in his repos
+- `.editorconfig`
 - `.eslintrc.json` | see [ESLint docs](https://eslint.org/docs/latest/)
 - `.prettierrc` | see [Prettier Configuration File](https://prettier.io/docs/en/configuration.html) - I see this one a lot
-- `.github` |
-- `.vscode` |
-- `.husky` |
-- look into Yamel files, `.yml`
+- `.github` folder
+- `.vscode` folder
+- `.husky` folder
 
 Here are some of those file from the repo I was briefly contributing to: [contrast-ratio-repo](https://github.com/jdwilkin4/contrast-ratio-repo)
 
 ### dot github folder
 
-It contain markdown template files, GitHub actions, ... Check out the [freeeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) for some more detailed files.
+It contain markdown template files, and GitHub actions in YAML files in a `workflows` folder. Check out the [freeeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) for some more detailed files.
 
 `pull_request_template.md`:
 
@@ -176,7 +175,10 @@ Fixes # (issue)
 
 ### dot husky folder
 
-pre-commit: also has a `.gitignore` in the folder with only `_` in it
+Check out the [Husky docs](https://typicode.github.io/husky/#/). You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Prettier
+
+- `pre-commit`:
+- Also has a `.gitignore` in the folder with only `_` in it
 
 ```sh
 #!/bin/sh
@@ -188,6 +190,8 @@ npx lint-staged
 - Check out the [Husky docs](https://typicode.github.io/husky/#/) and [Getting Started with Git Hooks and Husky](https://www.git-tower.com/blog/git-hooks-husky/)
 
 ## dot editorconfig
+
+Check out [EditorConfig](https://editorconfig.org/).
 
 ```s
 # EditorConfig is awesome: https://EditorConfig.org
@@ -229,7 +233,9 @@ indent_size = 2
 
 ### dot prettier files
 
-.prettierignore:
+Check out the [Prettier docs](https://prettier.io/docs/en/install.html) for more detailed information. Prettier mentions in their docs you can use Huskt to "...have Prettier run before each commit".
+
+**.prettierignore**:
 
 ```sh
 # Ignore artifacts:
@@ -237,14 +243,16 @@ build
 coverage
 ```
 
-.prettierrc.json
+**.prettierrc.json**
 
 ```json
 {
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "tabWidth": 2,
   "semi": true,
-  "singleQuote": false
+  "singleQuote": true,
+  "printWidth": 9999,
+  "arrowParens": "avoid"
 }
 ```
 
@@ -252,14 +260,16 @@ coverage
 
 ### Wes Bos dot eslint
 
+Also check out [ESLint docs](https://eslint.org/docs/latest/user-guide/getting-started).
+
 ```js
 module.exports = {
-  extends: ["airbnb", "prettier"],
-  parser: "@babel/eslint-parser",
+  extends: ['airbnb', 'prettier'],
+  parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
     babelOptions: {
-      presets: ["@babel/preset-react"],
+      presets: ['@babel/preset-react'],
     },
   },
   env: {
@@ -269,115 +279,115 @@ module.exports = {
     jest: true,
   },
   rules: {
-    "no-debugger": 0,
-    "no-use-before-define": "off",
-    "import/no-cycle": "off",
-    "no-alert": 0,
-    "no-await-in-loop": 0,
-    "no-return-assign": ["error", "except-parens"],
-    "no-restricted-syntax": [
+    'no-debugger': 0,
+    'no-use-before-define': 'off',
+    'import/no-cycle': 'off',
+    'no-alert': 0,
+    'no-await-in-loop': 0,
+    'no-return-assign': ['error', 'except-parens'],
+    'no-restricted-syntax': [
       2,
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement",
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
     ],
-    "no-unused-vars": [
+    'no-unused-vars': [
       1,
       {
         ignoreRestSiblings: true,
-        argsIgnorePattern: "res|next|^err",
+        argsIgnorePattern: 'res|next|^err',
       },
     ],
-    "prefer-const": [
-      "error",
+    'prefer-const': [
+      'error',
       {
-        destructuring: "all",
+        destructuring: 'all',
       },
     ],
-    "arrow-body-style": [2, "as-needed"],
-    "no-unused-expressions": [
+    'arrow-body-style': [2, 'as-needed'],
+    'no-unused-expressions': [
       2,
       {
         allowTaggedTemplates: true,
       },
     ],
-    "no-param-reassign": [
+    'no-param-reassign': [
       2,
       {
         props: false,
       },
     ],
-    "no-console": 0,
-    "import/prefer-default-export": 0,
+    'no-console': 0,
+    'import/prefer-default-export': 0,
     import: 0,
-    "func-names": 0,
-    "space-before-function-paren": 0,
-    "comma-dangle": 0,
-    "max-len": 0,
-    "import/extensions": 0,
-    "no-underscore-dangle": 0,
-    "consistent-return": 0,
-    "react/display-name": 1,
-    "react/no-array-index-key": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/prefer-stateless-function": 0,
-    "react/forbid-prop-types": 0,
-    "react/no-unescaped-entities": 0,
-    "react/function-component-definition": 0,
-    "jsx-a11y/accessible-emoji": 0,
-    "jsx-a11y/label-has-associated-control": [
-      "error",
+    'func-names': 0,
+    'space-before-function-paren': 0,
+    'comma-dangle': 0,
+    'max-len': 0,
+    'import/extensions': 0,
+    'no-underscore-dangle': 0,
+    'consistent-return': 0,
+    'react/display-name': 1,
+    'react/no-array-index-key': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/prefer-stateless-function': 0,
+    'react/forbid-prop-types': 0,
+    'react/no-unescaped-entities': 0,
+    'react/function-component-definition': 0,
+    'jsx-a11y/accessible-emoji': 0,
+    'jsx-a11y/label-has-associated-control': [
+      'error',
       {
-        assert: "either",
+        assert: 'either',
       },
     ],
-    "react/require-default-props": 0,
-    "react/jsx-filename-extension": [
+    'react/require-default-props': 0,
+    'react/jsx-filename-extension': [
       1,
       {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".mdx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.mdx'],
       },
     ],
     radix: 0,
-    "no-shadow": [
+    'no-shadow': [
       2,
       {
-        hoist: "all",
-        allow: ["resolve", "reject", "done", "next", "err", "error"],
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
       },
     ],
     quotes: [
       2,
-      "single",
+      'single',
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
       },
     ],
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
-        trailingComma: "es5",
+        trailingComma: 'es5',
         singleQuote: true,
         printWidth: 80,
         // below line only for windows users facing CLRF and eslint/prettier error
         // non windows users feel free to delete it
-        endOfLine: "auto",
+        endOfLine: 'auto',
       },
     ],
-    "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": [
-      "warn",
+    'jsx-a11y/href-no-hash': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
       {
-        aspects: ["invalidHref"],
+        aspects: ['invalidHref'],
       },
     ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/comma-dangle": ["off"],
-    "react/jsx-props-no-spreading": "off",
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/comma-dangle': ['off'],
+    'react/jsx-props-no-spreading': 'off',
   },
-  plugins: ["html", "prettier", "react-hooks"],
+  plugins: ['html', 'prettier', 'react-hooks'],
 };
 ```
 
