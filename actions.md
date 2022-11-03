@@ -12,7 +12,7 @@
    1. [Video 4](#video-4)
    1. [Video 5](#video-5)
    1. [Video 6](#video-6)
-      1. [Super-Linter](#super-linter)
+   1. [Super-Linter](#super-linter)
 1. [GitHub Actions Categories](#github-actions-categories)
 1. [Work flow rules](#work-flow-rules)
 1. [Example YAML Code](#example-yaml-code)
