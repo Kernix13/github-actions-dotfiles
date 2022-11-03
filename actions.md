@@ -65,6 +65,8 @@ Notes from various YouTube videos.
 - You can click on the file and see the log after it ran - I saw these on freeCodeCamp when I contributed changes - I saw the tests running
 - Always have a `build` action for every push
 
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ### Video 2
 
 2. Video: [Let's create a GitHub Action (super easy tutorial)](https://youtu.be/COPS4VMfaUc) by Code with Ania Kubow, Aug 29, 2020 | [Her repo](https://github.com/kubowania/my-javascript-action)
@@ -94,6 +96,8 @@ try {
 ```
 
 - She has 2 dependencies in [package.json](https://github.com/kubowania/my-javascript-action/blob/master/package.json): `@actions/core` and `@actions/github`
+
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Video 3
 
@@ -144,6 +148,8 @@ His `package.json` script:
 - Integrate Apps: discord, slack, trello, etc - Actions vs Apps
 - Check out _crontab.guru_
 
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Video 4
 
 4. Video: [Github Actions CI/CD - Everything you need to know to get started](https://youtu.be/mFFXuXjVgkU) by DevOps Journey, Mar 12, 2021
@@ -163,6 +169,8 @@ Back on Github:
 - Instead of writing the yml file from scratch, on Actions tab click New Workflow > you will see a bunch of templates
 - I actually just see them on my Actions tab and I don't see a btn for New Workflow
 - Check Marketplace > Actions
+
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Video 5
 
@@ -201,6 +209,8 @@ Note: You can run multiple versions of node by changing the version number
 ```
 
 > WTF? Where is the super simple Actions tutorial for beginners?
+
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Video 6
 
@@ -292,6 +302,8 @@ This: `VALIDATE_ALL_CODEBASE: false` broke the action???
 
 Pages: For the default actions, there are ones for Gatsby, Hugo and Astro
 
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## GitHub Actions Categories
 
 Consider selecting ttthe filter _Verification : Verified creator_. That is what I chose for all the specific categories/actions listed below:
@@ -320,6 +332,8 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 1. **Utilities**: 72 results, the most interesting Action titles: [Close stale issues](https://github.com/marketplace/actions/close-stale-issues), [**First interaction**](https://github.com/marketplace/actions/first-interaction), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [GitHub GraphQL API Query](https://github.com/marketplace/actions/github-graphql-api-query), [**GitHub API Request**](https://github.com/marketplace/actions/github-api-request), [Release-Notes-Preview](https://github.com/marketplace/actions/release-notes-preview), [Issue comment tag](https://github.com/marketplace/actions/issue-comment-tag), [Labeler](https://github.com/marketplace/actions/labeler), and [GitHub Script](https://github.com/marketplace/actions/github-script)
    1. Backup utilities: 0 results
 
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.
@@ -339,6 +353,8 @@ Notes from the Discord server for the repo `contrast-ratio-repo` that I did a fe
 1. While you are waiting for a review on your PR, feel free to pick up any new issue that hasn't been assigned yet.
 1. Please make sure to [link the issue you are working on to the PR](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) you created. That will automatically close the issue when the PR is merged so we don't have to remember to do that ourselves and have old issues on the board that has been completed.
 1. When you create a PR, you can request a review from someone on the team and they will be alerted through email to leave a review
+
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## Example YAML Code
 
@@ -446,3 +462,5 @@ jobs:
         node-version: "16"
     - run: node index.js
 ```
+
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
