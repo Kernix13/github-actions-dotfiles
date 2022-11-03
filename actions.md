@@ -1,5 +1,22 @@
 # Notes on Actions
 
+<a id="back-to-top"></a>
+
+## Table of contents
+
+1. [YAML Files](#yaml-files)
+1. [GitHub Actions](#github-actions)
+   1. [Video 1](#video-1)
+   1. [Video 2](#video-2)
+   1. [Video 3](#video-3)
+   1. [Video 4](#video-4)
+   1. [Video 5](#video-5)
+   1. [Video 6](#video-6)
+      1. [Super-Linter](#super-linter)
+1. [GitHub Actions Categories](#github-actions-categories)
+1. [Work flow rules](#work-flow-rules)
+1. [Example YAML Code](#example-yaml-code)
+
 ## YAML Files
 
 YAML is a digestible data serialization language often used to create configuration files with any programming language.
@@ -26,7 +43,13 @@ jobs:
     run: filename.ext
 ```
 
+<div align="right"><a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## GitHub Actions
+
+Notes from various YouTube videos.
+
+## Video 1
 
 1. Video: [How to get started with GitHub Actions](https://youtu.be/-ZiuJdT1i0k) by Eddie Jaoude, 11/2/2022 |
 
@@ -42,7 +65,7 @@ jobs:
 - You can click on the file and see the log after it ran - I saw these on freeCodeCamp when I contributed changes - I saw the tests running
 - Always have a `build` action for every push
 
----
+### Video 2
 
 2. Video: [Let's create a GitHub Action (super easy tutorial)](https://youtu.be/COPS4VMfaUc) by Code with Ania Kubow, Aug 29, 2020 | [Her repo](https://github.com/kubowania/my-javascript-action)
 
@@ -72,7 +95,7 @@ try {
 
 - She has 2 dependencies in [package.json](https://github.com/kubowania/my-javascript-action/blob/master/package.json): `@actions/core` and `@actions/github`
 
----
+## Video 3
 
 3. Video: [5 Ways to DevOps-ify your App - Github Actions Tutorial](https://youtu.be/eB0nUzAI7M8) by Fireship, 2020
 
@@ -121,9 +144,9 @@ His `package.json` script:
 - Integrate Apps: discord, slack, trello, etc - Actions vs Apps
 - Check out _crontab.guru_
 
----
+## Video 4
 
-3. Video: [Github Actions CI/CD - Everything you need to know to get started](https://youtu.be/mFFXuXjVgkU) by DevOps Journey, Mar 12, 2021
+4. Video: [Github Actions CI/CD - Everything you need to know to get started](https://youtu.be/mFFXuXjVgkU) by DevOps Journey, Mar 12, 2021
 
 - YAML Files: specifies Events, Jobs, Runners, Steps and Actions
   - An _Event_ is a trigger for a workflow (PR)
@@ -141,15 +164,15 @@ Back on Github:
 - I actually just see them on my Actions tab and I don't see a btn for New Workflow
 - Check Marketplace > Actions
 
----
+## Video 5
 
-4. Video: [Automatic Deployment With Github Actions](https://youtu.be/X3F3El_yvFg) by Traversy Media, Oct 12, 2020
+5. Video: [Automatic Deployment With Github Actions](https://youtu.be/X3F3El_yvFg) by Traversy Media, Oct 12, 2020
 
 - He added and commited his changes, then push
 - Wow, somehow pushing changes to GitHub updated his live page -> that is an Automatic Deployment
   - a GitHub action runs all the necessary scripts and if successful you can refresh your page to see the changes
 
-### Setup
+#### Setup
 
 His file I think: [yml file](https://github.com/graphyql/reactjs-tutorial/blob/master/.github/workflows/node.js.yml)
 
@@ -179,16 +202,16 @@ Note: You can run multiple versions of node by changing the version number
 
 > WTF? Where is the super simple Actions tutorial for beginners?
 
----
+## Video 6
 
-5. Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [Master GitHub Actions Tutorial](https://www.youtube.com/playlist?list=PL_RrEj88onS-um2xFy01sY46ik_2yt_EQ), 11 videos
+6. Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [Master GitHub Actions Tutorial](https://www.youtube.com/playlist?list=PL_RrEj88onS-um2xFy01sY46ik_2yt_EQ), 11 videos
 
 - On Actions tab choose _Static HTML_ under **Pages**
 - Change the file name and `name` property if you want
 - Spacing is crucial!
 - NO - I went to Marketplace and chose [Super-Linter](https://github.com/marketplace/actions/super-linter)
 
-### Super-Linter
+#### Super-Linter
 
 ```yml
 name: Lint Code Base
