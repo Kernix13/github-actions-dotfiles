@@ -4,7 +4,24 @@ Check out Eddie Jaoude repo [docs-1](https://github.com/eddiejaoude/docs-1) for 
 
 What is the npm package `browser-sync` used for? In place of the LiveServer extension?
 
-## Video: 5 Reasons to IMMEDIATELY Turn On ESLint in VS Code
+<div id="back-to-top"></div>
+
+## Table of Contents
+
+1. [Video 1](#video-1)
+1. [Video 2](#video-2)
+1. [Video 3](#video-3)
+1. [Dotfiles](#dotfiles)
+   1. [dot github folder](#dot-github-folder)
+   1. [dot editorconfig](#dot-editorconfig)
+   1. [dot prettier files](#dot-prettier-files)
+   1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
+   1. [dot vscode folder](#dot-vscode-folder)
+1. [contrast ratio package json file](#contrast-ratio-package-json-file)
+
+## Video 1
+
+Video title: 5 Reasons to IMMEDIATELY Turn On ESLint in VS Code
 
 1. **Consistency**
 
@@ -28,7 +45,11 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
 
 - overriding some of the rules
 
-## Video: ESLint Quickstart - find errors automatically
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## Video 2
+
+Video title: ESLint Quickstart - find errors automatically
 
 ESLint helps having clean code and be free of errors - he creating a folder named `eslint-demo` which maybe I should do.
 
@@ -51,9 +72,11 @@ Next: `npm install --sve-dev eslint`
 
 > What is airbnb in terms of linting?
 
-## Video: VSCode ESLint, Prettier & Airbnb Guide Setup
+## Video 3
 
-By Brad TRaversy
+Video title: VSCode ESLint, Prettier & Airbnb Guide Setup
+
+By Brad Traversy
 
 - there is a Github Airbnb style guide - single quotes for strings
 - go t o the website to check any of the rules you see in the terminal
@@ -61,6 +84,8 @@ By Brad TRaversy
 - he is installing ESLint extension and Prettier
 - npm packages: `npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier` - he also installed `eslint-plugin-node eslint-config-node`
 - to use the Airbnb styleguide: `npx install-peerdeps --dev eslint-config-airbnb` and that will instal `eslint`, `eslint-plugin-import`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `eslint-plugin-jsx-a11y`
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Config files
 
@@ -98,6 +123,8 @@ After all that create the config files
 - `object-shorthand`: ignore, I wouldn't have that one set to off
 - `class-methods-use-this`: you get an error for classes that have a method that doesn't use the `this` keyword
 
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
 ## Dotfiles
 
 dotfiles:
@@ -112,7 +139,7 @@ dotfiles:
 
 Here are some of those file from the repo I was briefly contributing to: [contrast-ratio-repo](https://github.com/jdwilkin4/contrast-ratio-repo)
 
-### .github folder
+### dot github folder
 
 It contain markdown template files, GitHub actions, ... Check out the [freeeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) for some more detailed files.
 
@@ -145,7 +172,9 @@ Fixes # (issue)
 - [ ] My changes generate no new warnings
 ```
 
-### .husky folder
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### dot husky folder
 
 pre-commit: also has a `.gitignore` in the folder with only `_` in it
 
@@ -158,7 +187,7 @@ npx lint-staged
 
 - Check out the [Husky docs](https://typicode.github.io/husky/#/) and [Getting Started with Git Hooks and Husky](https://www.git-tower.com/blog/git-hooks-husky/)
 
-## .editorconfig
+## dot editorconfig
 
 ```s
 # EditorConfig is awesome: https://EditorConfig.org
@@ -196,7 +225,11 @@ indent_style = space
 indent_size = 2
 ```
 
-### .prettierignore
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### dot prettier files
+
+.prettierignore:
 
 ```sh
 # Ignore artifacts:
@@ -204,7 +237,7 @@ build
 coverage
 ```
 
-### .prettierrc.json
+.prettierrc.json
 
 ```json
 {
@@ -215,7 +248,9 @@ coverage
 }
 ```
 
-### Wes Bos .eslint.js
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### Wes Bos dot eslint
 
 ```js
 module.exports = {
@@ -349,13 +384,17 @@ module.exports = {
 - Check out the [freeCodeCamp eslint.json](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.eslintrc.json) file and this [example on github](https://github.com/i-ron-y/eslintrc-starter-files/blob/master/.eslintrc.json)
 - consider havine a `.eslintignore` file
 
-### .vscode folder
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### dot vscode folder
 
 I think this is just your `settings.json` file, possible just for thr project folder it is in
 
 - ...to share settings, task configuration and debug configuration with the team. I think generally it makes sense to share settings
 
 ## contrast ratio package json file
+
+> Look into `browser-sync`
 
 ```json
 {
@@ -392,3 +431,5 @@ I think this is just your `settings.json` file, possible just for thr project fo
   }
 }
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
