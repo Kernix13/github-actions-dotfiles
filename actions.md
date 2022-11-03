@@ -307,7 +307,7 @@ Pages: For the default actions, there are ones for Gatsby, Hugo and Astro
 
 ## GitHub Actions Categories
 
-Consider selecting ttthe filter _Verification : Verified creator_. That is what I chose for all the specific categories/actions listed below:
+Consider selecting the filter _Verification : Verified creator_. That is what I chose for all the specific categories/actions listed below:
 
 1. **API management**: Check out [action-github-app-token](https://github.com/marketplace/actions/action-github-app-token), uses GitHub Apps to fetch a GitHub auth token for a GitHub App installation. The GitHub App is used to authorize API access across multiple repositories - `yarn` only?
 1. **Chat**: Check out [slack-send](https://github.com/marketplace/actions/slack-send) and maybe [Twillio SMS](https://github.com/marketplace/actions/twilio-sms)
@@ -345,7 +345,7 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 I tried 3 Actions, 1 had issues, and 1 did not run. Now I'm sorting by Most Stars (1st page results only):
 
 1. **API management**: 307 results , [Fetch API Data Action](https://github.com/marketplace/actions/fetch-api-data)
-1. **Chat**: 320 results, a lot of Slack Actions, [Issues Translator](https://github.com/marketplace/actions/issues-translator), [Actiond for Discord](https://github.com/marketplace/actions/actions-for-discord), [Action Status Discord](https://github.com/marketplace/actions/actions-status-discord), [Twitter Action](https://github.com/marketplace/actions/twitter-action)
+1. **Chat**: 320 results, a lot of Slack Actions, [Issues Translator](https://github.com/marketplace/actions/issues-translator), [Actionns for Discord](https://github.com/marketplace/actions/actions-for-discord), [Action Status Discord](https://github.com/marketplace/actions/actions-status-discord), [Twitter Action](https://github.com/marketplace/actions/twitter-action)
 1. **Code quality**: [](),
 1. **Code review**: [](),
 1. **Continuous integration**: 5354 results, too many

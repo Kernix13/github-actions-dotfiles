@@ -18,7 +18,7 @@ I have some sample/template code for each file/folder type
 
 ### .github folder
 
-In the root I have `pull_request_template.md`. In `/workflows` I have `build.yml` as an example (DELETED build.yml, added the code at bottom of actions.md).
+In the root I have `pull_request_template.md`. In `/workflows` I have `build.yml` as an example (DELETED it).
 
 ### .husky
 
