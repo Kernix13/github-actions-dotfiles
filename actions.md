@@ -111,7 +111,7 @@ His `package.json` script:
 }
 ```
 
-#1 **Continuous Deployment** (CD):
+#2 **Continuous Deployment** (CD):
 
 > Holy cow this guy talks fast
 
@@ -120,6 +120,8 @@ His `package.json` script:
 - Publish NPM packages: about 8:30 - SKIP
 - Integrate Apps: discord, slack, trello, etc - Actions vs Apps
 - Check out _crontab.guru_
+
+---
 
 3. Video: [Github Actions CI/CD - Everything you need to know to get started](https://youtu.be/mFFXuXjVgkU) by DevOps Journey, Mar 12, 2021
 
@@ -138,6 +140,8 @@ Back on Github:
 - Instead of writing the yml file from scratch, on Actions tab click New Workflow > you will see a bunch of templates
 - I actually just see them on my Actions tab and I don't see a btn for New Workflow
 - Check Marketplace > Actions
+
+---
 
 4. Video: [Automatic Deployment With Github Actions](https://youtu.be/X3F3El_yvFg) by Traversy Media, Oct 12, 2020
 
@@ -177,7 +181,7 @@ Note: You can run multiple versions of node by changing the version number
 
 ---
 
-Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [Master GitHub Actions Tutorial](https://www.youtube.com/playlist?list=PL_RrEj88onS-um2xFy01sY46ik_2yt_EQ), 11 videos
+5. Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [Master GitHub Actions Tutorial](https://www.youtube.com/playlist?list=PL_RrEj88onS-um2xFy01sY46ik_2yt_EQ), 11 videos
 
 - On Actions tab choose _Static HTML_ under **Pages**
 - Change the file name and `name` property if you want
@@ -187,16 +191,9 @@ Video: New guy, Getting Started with GitHub Actions Tutorial from his playlist [
 ### Super-Linter
 
 ```yml
-#################################
-#################################
-## Super Linter GitHub Actions ##
-#################################
-#################################
 name: Lint Code Base
 
-#############################
 # Start the job on all push #
-#############################
 on:
   push:
     branches-ignore: [master, main]
@@ -204,9 +201,7 @@ on:
   pull_request:
     branches: [master, main]
 
-###############
 # Set the Job #
-###############
 jobs:
   build:
     # Name the Job
@@ -214,13 +209,9 @@ jobs:
     # Set the agent to run on
     runs-on: ubuntu-latest
 
-    ##################
     # Load all steps #
-    ##################
     steps:
-      ##########################
       # Checkout the code base #
-      ##########################
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
@@ -228,9 +219,7 @@ jobs:
           # list of changed files within `super-linter`
           fetch-depth: 0
 
-      ################################
       # Run Linter against code base #
-      ################################
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
@@ -279,6 +268,34 @@ This: `VALIDATE_ALL_CODEBASE: false` broke the action???
 > Settings > Code and automation > Branches > Require a pull request before merging > Reuire approvals (1)
 
 Pages: For the default actions, there are ones for Gatsby, Hugo and Astro
+
+## GitHub Actions Categories
+
+Consider selecting ttthe filter _Verification : Verified creator_. That is what I chose for all the specific categories/actions listed below:
+
+1. **API management**: Check out [action-github-app-token](https://github.com/marketplace/actions/action-github-app-token), uses GitHub Apps to fetch a GitHub auth token for a GitHub App installation. The GitHub App is used to authorize API access across multiple repositories - `yarn` only?
+1. **Chat**: Check out [slack-send](https://github.com/marketplace/actions/slack-send) and maybe [Twillio SMS](https://github.com/marketplace/actions/twilio-sms)
+1. **Code quality**: Check out [action-git-diff-suggestions](https://github.com/marketplace/actions/action-git-diff-suggestions) (_issue with this one_), [**validate-license-action**](https://github.com/marketplace/actions/validate-license-action) (Validate a license file is one of the allowed licenses), [IntelliCode Team Completions](https://github.com/marketplace/actions/intellicode-team-completions), and [**Super-Linter**](https://github.com/marketplace/actions/super-linter)
+1. **Code review**: `action-git-diff-suggestions` is also in this category, [SecureStack Application Bill of Materials (ABOM/SBOM)](https://github.com/marketplace/actions/securestack-application-bill-of-materials-abom-sbom), [Kubernetes Security Config Watch](https://github.com/marketplace/actions/kubernetes-security-config-watch), and [**Release-Notes-Preview**](https://github.com/marketplace/actions/release-notes-preview)
+1. **Continuous integration**: 166 results, too many to go through although Git Version looks good
+   1. Container CI: 41 results
+   1. Game CI: 1 result
+   1. Mobile CI: 2 results
+1. **Dependency management**: [Cache](https://github.com/marketplace/actions/cache) and [Dependency Review](https://github.com/marketplace/actions/dependency-review)
+1. **Deployment**: 113 results, too many to review
+1. **IDEs**: `IntelliCode Team Completions` is also here
+1. **Learning**: only 2 results with Verified Creator filter
+1. **Localization**: no results with Verified Creator filter
+1. **Mobile**: 5 results, no idea what they do
+1. **Monitoring**: Check out [Load runner information](https://github.com/marketplace/actions/load-runner-information)
+1. **Project management**: A lot dealing with Jira, also [Teamwork GitHub Sync](https://github.com/marketplace/actions/teamwork-github-sync), [**Issue comment tag**](https://github.com/marketplace/actions/issue-comment-tag), and [Add to GitHub projects](https://github.com/marketplace/actions/add-to-github-projects)
+1. **Publishing**: 17 results, a few each for Google, Microsoft, and Github Pages of which [Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-github-pages-site) and [Configure GitHub Pages](https://github.com/marketplace/actions/configure-github-pages) look good
+1. **Recently added**: 0 verified results
+1. **Security**: 100 results, too many to review
+1. **Support**: 7 Jira results
+1. **Testing**: 26 results, 7 dealing with Parasoft, check out [RapidAPI Testing Trigger](https://github.com/marketplace/actions/rapidapi-testing-trigger)
+1. **Utilities**: 72 results, the most interesting Action titles: [Close stale issues](https://github.com/marketplace/actions/close-stale-issues), [**First interaction**](https://github.com/marketplace/actions/first-interaction), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [GitHub GraphQL API Query](https://github.com/marketplace/actions/github-graphql-api-query), [**GitHub API Request**](https://github.com/marketplace/actions/github-api-request), [Release-Notes-Preview](https://github.com/marketplace/actions/release-notes-preview), [Issue comment tag](https://github.com/marketplace/actions/issue-comment-tag), [Labeler](https://github.com/marketplace/actions/labeler), and [GitHub Script](https://github.com/marketplace/actions/github-script)
+   1. Backup utilities: 0 results
 
 ## Work flow rules
 
