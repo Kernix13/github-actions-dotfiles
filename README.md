@@ -41,3 +41,13 @@ I have the following:
 
 1. `actions.md`: my notes from the videos I watched
 1. `dotfiles.md`: notes on the various files
+
+What is **DevOps**?
+
+> DevOps is a set of practices, tools, and a cultural philosophy that automate and integrate the processes between software development and IT teams. It emphasizes team empowerment, cross-team communication and collaboration, and technology automation.
+
+What is a Docker File?
+
+## Contributing
+
+If you found this repo because you were looking into Actions and Dotfiles, and would like to contriute, then open an issue or create a post on t he Discussions tab. I haven't done the license thing for this repo not the other docs (contributing, code-of-conduct).

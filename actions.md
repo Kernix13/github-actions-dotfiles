@@ -272,6 +272,8 @@ Things to check in Super-Linter `linter.yml`:
 - you don't want your PR to fail because of the linter: add `DISABLE_ERRORS: true` but this is not recommended
 - use `VALIDATE_ALL_CODEBASE: false` so that it doesn't check your entire codebase which would tale a long time for large repos - When set to `false`, only new or edited files will be parsed for validation
 
+Why are things failing? Check out thie [Super-Linter on GitHub](https://github.com/github/super-linter)
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.
