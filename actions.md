@@ -274,6 +274,12 @@ Things to check in Super-Linter `linter.yml`:
 
 Why are things failing? Check out thie [Super-Linter on GitHub](https://github.com/github/super-linter)
 
+This: `VALIDATE_ALL_CODEBASE: false` broke the action???
+
+> Settings > Code and automation > Branches > Require a pull request before merging > Reuire approvals (1)
+
+Pages: For the default actions, there are ones for Gatsby, Hugo and Astro
+
 ## Work flow rules
 
 Notes from the Discord server for the repo `contrast-ratio-repo` that I did a few contributions to.
