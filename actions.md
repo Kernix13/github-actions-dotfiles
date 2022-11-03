@@ -2,7 +2,7 @@
 
 <div id="back-to-top"></div>
 
-## Table of Contents (Why aren't the links working???)
+## Table of Contents
 
 1. [YAML Files](#yaml-files)
 1. [GitHub Actions](#github-actions)
@@ -326,11 +326,13 @@ Consider selecting ttthe filter _Verification : Verified creator_. That is what 
 1. **Project management**: A lot dealing with Jira, also [Teamwork GitHub Sync](https://github.com/marketplace/actions/teamwork-github-sync), [**Issue comment tag**](https://github.com/marketplace/actions/issue-comment-tag), and [Add to GitHub projects](https://github.com/marketplace/actions/add-to-github-projects)
 1. **Publishing**: 17 results, a few each for Google, Microsoft, and Github Pages of which [Deploy GitHub Pages site](https://github.com/marketplace/actions/deploy-github-pages-site) and [Configure GitHub Pages](https://github.com/marketplace/actions/configure-github-pages) look good
 1. **Recently added**: 0 verified results
-1. **Security**: 100 results, too many to review
+1. **Security**: 100 results, look into [Kubernetes Security Config Watch](https://github.com/marketplace/actions/kubernetes-security-config-watch) and [Authenticate to Google Cloud](https://github.com/marketplace/actions/authenticate-to-google-cloud)
 1. **Support**: 7 Jira results
 1. **Testing**: 26 results, 7 dealing with Parasoft, check out [RapidAPI Testing Trigger](https://github.com/marketplace/actions/rapidapi-testing-trigger)
 1. **Utilities**: 72 results, the most interesting Action titles: [Close stale issues](https://github.com/marketplace/actions/close-stale-issues), [**First interaction**](https://github.com/marketplace/actions/first-interaction), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [GitHub GraphQL API Query](https://github.com/marketplace/actions/github-graphql-api-query), [**GitHub API Request**](https://github.com/marketplace/actions/github-api-request), [Release-Notes-Preview](https://github.com/marketplace/actions/release-notes-preview), [Issue comment tag](https://github.com/marketplace/actions/issue-comment-tag), [Labeler](https://github.com/marketplace/actions/labeler), and [GitHub Script](https://github.com/marketplace/actions/github-script)
    1. Backup utilities: 0 results
+
+**NOTES**: `validate-license-action` has not been updated in 4 years, `Release-Notes-Preview` in 3 years (I added it anyway), `Issue comment tag` requires a GitHub App
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
