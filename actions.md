@@ -342,27 +342,27 @@ Consider selecting the filter _Verification : Verified creator_. That is what I 
 
 ### Without Verified creator filter
 
-I tried 3 Actions, 1 had issues, and 1 did not run. Now I'm sorting by Most Stars (1st page results only):
+I tried 3 Actions, 1 had issues, and 1 did not run. Now I'm sorting by Most Stars (1st page results only). There should be more search parameters to limit the number of results:
 
-1. **API management**: 307 results , [Fetch API Data Action](https://github.com/marketplace/actions/fetch-api-data)
-1. **Chat**: 320 results, a lot of Slack Actions, [Issues Translator](https://github.com/marketplace/actions/issues-translator), [Actionns for Discord](https://github.com/marketplace/actions/actions-for-discord), [Action Status Discord](https://github.com/marketplace/actions/actions-status-discord), [Twitter Action](https://github.com/marketplace/actions/twitter-action)
-1. **Code quality**: [](),
-1. **Code review**: [](),
-1. **Continuous integration**: 5354 results, too many
+1. **API management**: 307 results, [**Fetch API Data Action**](https://github.com/marketplace/actions/fetch-api-data)
+1. **Chat**: 320 results, a lot of Slack Actions, [Issues Translator](https://github.com/marketplace/actions/issues-translator), [Actions for Discord](https://github.com/marketplace/actions/actions-for-discord), [Action Status Discord](https://github.com/marketplace/actions/actions-status-discord), [Twitter Action](https://github.com/marketplace/actions/twitter-action)
+1. **Code quality**: 1352 results, [**GraphQL Inspector**](https://github.com/marketplace/actions/graphql-inspector), [Check PHP syntax errors](https://github.com/marketplace/actions/check-php-syntax-errors), [MegaLinter](https://github.com/marketplace/actions/megalinter), [Lint Action](https://github.com/marketplace/actions/lint-action)
+1. **Code review**: [Changed Files](https://github.com/marketplace/actions/changed-files), [semantic-pull-request](https://github.com/marketplace/actions/semantic-pull-request), [dotenv-linter](https://github.com/marketplace/actions/dotenv-linter), [Auto Assign Action](https://github.com/marketplace/actions/auto-assign-action)
+1. **Continuous integration**: 5354 results, [Setup PHP Action](https://github.com/marketplace/actions/setup-php-action), [SSH Remote Commands](https://github.com/marketplace/actions/ssh-remote-commands), [Cypress.io](https://github.com/marketplace/actions/cypress-io)
    1. Container CI: 934 results
    1. Game CI: 87 result
    1. Mobile CI: 157 results
 1. **Dependency management**: 713 results, [NPM or Yarn install with caching](https://github.com/marketplace/actions/npm-or-yarn-install-with-caching), [Dependency review](https://github.com/marketplace/actions/dependency-review), [Install PHP Dependencies with Composer](https://github.com/marketplace/actions/install-php-dependencies-with-composer), [The PHP Security Checker](https://github.com/marketplace/actions/the-php-security-checker)
-1. **Deployment**: 3076 results
+1. **Deployment**: 3076 results, [GitHub Pages Action](https://github.com/marketplace/actions/github-pages-action), [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages)
 1. **IDEs**: 36 results, don't see any I would use
 1. **Learning**: 117 results, [NodeJS Action Template](https://github.com/marketplace/actions/nodejs-action-template)
 1. **Localization**: 70 results, [Translation Action](https://github.com/marketplace/actions/translation-action), [Pot File Generator For WordPress](https://github.com/marketplace/actions/pot-file-generator-for-wordpress) and [WordPress .pot File Generator](https://github.com/marketplace/actions/wordpress-pot-file-generator)
 1. **Mobile**: 94 results, [Send Push Notification](https://github.com/marketplace/actions/send-push-notification)
-1. **Monitoring**: 311 results, [GraphQL Inspector](https://github.com/marketplace/actions/graphql-inspector), [Lighthouse check](https://github.com/marketplace/actions/lighthouse-check), [Send email](https://github.com/marketplace/actions/send-email), [github-repo-stats](https://github.com/marketplace/actions/github-repo-stats), [Profile readme stats](https://github.com/marketplace/actions/profile-readme-stats)
+1. **Monitoring**: 311 results, `GraphQL Inspector` also in this category, [**Lighthouse check**](https://github.com/marketplace/actions/lighthouse-check), [Send email](https://github.com/marketplace/actions/send-email), [github-repo-stats](https://github.com/marketplace/actions/github-repo-stats), [**Profile readme stats**](https://github.com/marketplace/actions/profile-readme-stats)
 1. **Project management**: 913 results, [Create release](https://github.com/marketplace/actions/create-release), [GitHub deployments](https://github.com/marketplace/actions/github-deployments), [GitHub Project Automation+](https://github.com/marketplace/actions/github-project-automation) and [Add To GitHub projects](https://github.com/marketplace/actions/add-to-github-projects), [Pull request stats](https://github.com/marketplace/actions/pull-request-stats)
 1. **Publishing**: 1723 results, [Blog post workflow](https://github.com/marketplace/actions/blog-post-workflow), [WordPress Plugin Deploy](https://github.com/marketplace/actions/wordpress-plugin-deploy), [Install SSH Key](https://github.com/marketplace/actions/install-ssh-key), [Deploy to Heroku](https://github.com/marketplace/actions/deploy-to-heroku)
 1. **Security**: 769 results, [Is Website vulnerable](https://github.com/marketplace/actions/is-website-vulnerable), [Authenticate to Google Cloud](https://github.com/marketplace/actions/authenticate-to-google-cloud),
-1. **Support**: 214 results, [Pull Request title rules](https://github.com/marketplace/actions/pull-request-title-rules), [Git Commit Data](https://github.com/marketplace/actions/git-commit-data)
+1. **Support**: 214 results, [**Pull Request title rules**](https://github.com/marketplace/actions/pull-request-title-rules), [**Git Commit Data**](https://github.com/marketplace/actions/git-commit-data)
 1. **Testing**: 1142 results, [markdown-link-check](https://github.com/marketplace/actions/markdown-link-check)
 1. **Utilities**: 4320 results, [Metrics embed](https://github.com/marketplace/actions/metrics-embed), [Setup PHP action](https://github.com/marketplace/actions/metrics-embed), [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment), [**GitHub-Profile-Summary-Cards**](https://github.com/marketplace/actions/github-profile-summary-cards)
    1. Backup utilities: 87 results, [google-drive-upload-git-action](https://github.com/marketplace/actions/google-drive-upload-git-action), [Mirror to BitBucket GitHub Action](https://github.com/marketplace/actions/mirror-to-bitbucket-github-action), [repo-backup-arweave](https://github.com/marketplace/actions/repo-backup-arweave)
