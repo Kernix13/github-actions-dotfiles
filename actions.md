@@ -353,8 +353,8 @@ I tried 3 Actions, 1 had issues, and 1 did not run. Now I'm sorting by Most Star
    1. Game CI: 87 result
    1. Mobile CI: 157 results
 1. **Dependency management**: 713 results, [NPM or Yarn install with caching](https://github.com/marketplace/actions/npm-or-yarn-install-with-caching), [Dependency review](https://github.com/marketplace/actions/dependency-review), [Install PHP Dependencies with Composer](https://github.com/marketplace/actions/install-php-dependencies-with-composer), [The PHP Security Checker](https://github.com/marketplace/actions/the-php-security-checker)
-1. **Deployment**: 3076 results, [GitHub Pages Action](https://github.com/marketplace/actions/github-pages-action), [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages)
-1. **IDEs**: 36 results, don't see any I would use
+1. **Deployment**: 3076 results, [**Astro Deploy**](https://github.com/marketplace/actions/astro-deploy), [GitHub Pages Action](https://github.com/marketplace/actions/github-pages-action), [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages)
+1. **IDEs**: 36 results, [**TODO to Issue**](https://github.com/marketplace/actions/todo-to-issue), [Visual Studio shell](https://github.com/marketplace/actions/visual-studio-shell), [Try in Web IDE](https://github.com/marketplace/actions/try-in-web-ide)
 1. **Learning**: 117 results, [NodeJS Action Template](https://github.com/marketplace/actions/nodejs-action-template)
 1. **Localization**: 70 results, [Translation Action](https://github.com/marketplace/actions/translation-action), [Pot File Generator For WordPress](https://github.com/marketplace/actions/pot-file-generator-for-wordpress) and [WordPress .pot File Generator](https://github.com/marketplace/actions/wordpress-pot-file-generator)
 1. **Mobile**: 94 results, [Send Push Notification](https://github.com/marketplace/actions/send-push-notification)
