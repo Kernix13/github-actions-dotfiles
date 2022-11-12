@@ -17,6 +17,8 @@
    1. [Without Verified creator filter](#without-verified-creator-filter)
 1. [Work flow rules](#work-flow-rules)
 1. [Example YAML Code](#example-yaml-code)
+1. [GitHub Actions Crash Course](#github-actions-crash-course)
+   1. [YML Code Blocks](#yml-code-blocks)
 
 ## YAML Files
 
@@ -516,5 +518,55 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 ```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## GitHub Actions Crash Course
+
+[Video](https://youtu.be/1oJQRlz1v94) from the YouTube Channel Laith Academy
+
+- From 7:30, Add a new workflow - click the New workflow button - that takes you to boilerplate Actions which you can pick
+- He grabbed a Node.js action - clicked on Configure for one of the actions > copied all the YAML code and hit the back button to cancel adding that action
+- instead he added it to a file in `.github` > `workflows` > `filename.yml` - his file runs on a Pr and to run a build job and to run tests
+- He says this is an integration workflow so he named it `integration.yml` and he pasted in all the code - delete the comments, give it a new `name`, indent for nesting, e.g., an `on` blick, then inside `push` and `pull_request` blocks - inside of both is a `branches` key/value pair
+
+### YML Code Blocks
+
+- The `on` block specifies when to run these jobs, like _on_ a `pull_request`
+- The `jobs` block is what will run based on the `on` code blocks - one he has is `build`
+
+#### build block
+
+- in this block is nested `runs-on`, `strategy`, and `steps`
+- `runs-on`: this job has to run on a server which is hosted by GitHub
+- `steps`: the steps needed in order to run the job - inside are keys of `uses`, `name`, `with`, and `run` 
+  - Check the keywords in the `uses` value and search for them and you will find a repo on it like `actions/checkout`
+  - Checkout the account `actions` then search for `checkout`, `setup`, etc.
+  - `with`: specifies the different versions of Node (for this example) you want to use and this is where `strategy` comes in
+- `strategy`: aloows you to specify multiple Node versions - they are in an array nested in `matrix` > `node-version` and inside `with` > `node-version` he has `matrix.node-version`
+- `run` commands: an example line would be: 
+
+```yml
+- run: npm install
+- run: npm run build
+```
+
+He also mentions writing the units test block so he copied the build block, pasted it inside the `jobs` block and then edited it. He litterally used all the same code except changed `npm run build` to `npm run test`.
+
+### Test your action
+
+- He created a new branch, add, commit, push - on GitHub create a PR, and then you action will start running since it was set up for PR's
+- If you click on the action while it is running you will see the steps running - the first few are "health" checks - then you see your `run` blocks
+- They will either pass or fail 
+- He has it set up for PR's and pushes/merges with the `main` branch
+- Back in VS Code checout to `main`, do `git pull`, create a new branch to test failure
+- He made a small change to his source code to cause a failure - now you can track what has passed and what has failed
+- But even though the tests failed, you can still merge the PR - but you may want to block that ability - see _24:50_ in video, but:
+  - Go to the actions repo > braches > Vranch protection rules > set it up there
+- Wait, he did all that somewhere else (watch again) 
+
+### Docker Image
+
+- He created a new YAML file, copied the code from `integration.yml` and edited it - SKIP (29:00) 
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
