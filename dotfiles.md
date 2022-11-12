@@ -16,6 +16,7 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
    1. [dot editorconfig](#dot-editorconfig)
    1. [dot prettier files](#dot-prettier-files)
    1. [dot browserslistrc file](#dot-browserslistrc-file)
+   1. [dot env file](#dot-env-file)
    1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
    1. [dot vscode folder](#dot-vscode-folder)
 1. [contrast ratio package json file](#contrast-ratio-package-json-file)
@@ -292,6 +293,37 @@ And here is what is in my file from a VueJS app:
 last 2 versions
 not dead
 not ie 11
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### dot env file
+
+ENVIRONMENT VARIABLES: 
+
+- An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer
+- An environment variable is a variable that your system needs rather than a program
+
+I commented out `*.env` files in my `.gitignore` file, but noramlly you would not push there to a public repo. Here are some generic examples:
+
+```sh
+STATUS=production
+
+# API Keys
+API_KEY="SUPER SECRET API KEY"
+
+#Development port
+DEV_PORT=7000
+
+#Production port
+PROD_PORT=8000
+
+#DB CONFIG
+HOST=db.host
+USER=root
+PASSWORD=db.password
+DB=db.name
+DIALECT=mysql
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>

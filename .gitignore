@@ -13,7 +13,7 @@ ehthumbs_vista.db
 
 # Numerous always-ignore extensions
 *.diff
-*.env
+# *.env
 *.err
 *.log
 *.sass-cache
