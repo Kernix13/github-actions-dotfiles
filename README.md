@@ -12,6 +12,8 @@ My attempt at answering:
 1. How and why do I use them?
 1. What are boilerplate starter files for each?
 
+I know why to add some of the dotfiles, but I do not know how the other work. I also know that some of the files are creating when you install various NPM packages. 
+
 ## Files
 
 I have some sample/template code for each file/folder type

@@ -20,7 +20,7 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
    1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
    1. [dot vscode folder](#dot-vscode-folder)
    1. [Miscellaneous dot files](#miscellaneous-dot-files)
-1. [contrast ratio package json file](#contrast-ratio-package-json-file)
+1. [Contrast ratio package json file](#contrast-ratio-package-json-file)
 
 ## Video 1
 
@@ -521,7 +521,7 @@ The `.jshintrc` file looked interesting so I took a look. It is basically a json
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
-## contrast ratio package json file
+## Contrast ratio package json file
 
 > Look into `browser-sync`
 
