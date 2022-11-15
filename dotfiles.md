@@ -19,6 +19,7 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
    1. [dot env file](#dot-env-file)
    1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
    1. [dot vscode folder](#dot-vscode-folder)
+   1. [Miscellaneous dot files](#miscellaneous-dot-files)
 1. [contrast ratio package json file](#contrast-ratio-package-json-file)
 
 ## Video 1
@@ -326,6 +327,15 @@ DB=db.name
 DIALECT=mysql
 ```
 
+Other files with a  `.env` prefix that you may see are:
+
+```sh
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### Wes Bos dot eslint
@@ -471,6 +481,45 @@ module.exports = {
 I think this is just your `settings.json` file, possible just for thr project folder it is in
 
 - ...to share settings, task configuration and debug configuration with the team. I think generally it makes sense to share settings
+
+### Miscellaneous dot files
+
+There are a lot of other _dot_ files that you will see in repositories, but some you will not see because they are in the `.gitignore` file. Take a look at my [Beginner Git Commands repo](https://github.com/Kernix13/beginner-git-commands), spefically fin the INTERMEDIATE_GIT.md file. In the `gitignore` section I have recommended boilerplate versions for that file. 
+
+Not all the file extensions ignored are dotfiles, but are merely the extensions of files to ignore. But that is a good place to check for other files not mentioned above. And always look at repos you found and check to see if they have dotfiles that you haven't see before. 
+
+Here are 3 I recently found:
+
+```sh
+.npmignore
+.travis.yml
+.jshintrc
+```
+
+The `.jshintrc` file looked interesting so I took a look. It is basically a json file with editor rules and JavaScript rules to set/follow:
+
+```json
+{
+  "node": true,
+  "laxcomma": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "newcap": true,
+  "quotmark": "single",
+  "undef": true,
+  "trailing": true,
+  "shadow": true,
+  "expr": true,
+  "boss": true,
+  "globals": {
+    "window": false,
+    "document": false
+  }
+}
+```
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ## contrast ratio package json file
 
