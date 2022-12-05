@@ -300,18 +300,43 @@ not ie 11
 
 ### dot env file
 
-ENVIRONMENT VARIABLES: 
+ENVIRONMENT VARIABLES:
 
 - An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer
 - An environment variable is a variable that your system needs rather than a program
+- Use them to store config or settings for your app (sensitive/secret information) - information that should not be seen by the end user
+- **Eaxamples**: API keys, database credentials, login credentials, URLs for accessing 3rd-party data, etc.
+- Main benefit is to make your app easily supported in different environments
 
-I commented out `*.env` files in my `.gitignore` file, but noramlly you would not push there to a public repo. Here are some generic examples:
+To use these files:
+
+1. You need to install the dotevn package: `npm i dotenv`
+1. Create a file in your root called `.env`
+1. Add your variables in there:: `WEATHER_API_KEY=asdsdfgkjhkj2323lkjlkfghj`
+1. To access that value in your JS or other files, at the top add:
+
+```js
+require('dotevn').config();
+console.log(process.env.WEATHER_API_KEY);
+// How to use with an API endpoint
+const response = await fetch(
+  'http://api.openweathermap.org/geo/1.0/zip?zip=' +
+    zip +
+    ',US&appid=API_KEY_HERE'
+);
+```
+
+- Your data is available via `process.env`
+- `.env.example` shows users of your project what to create: `WEATHER_API_KEY="Your key here"`
+- THAT'S IT!
+
+I commented out `*.env` files in my `.gitignore` file, but noramlly you would not push them to a public repo. Here are some examples:
 
 ```sh
 STATUS=production
 
 # API Keys
-API_KEY="SUPER SECRET API KEY"
+API_KEY=aashflkfgduiropowelkgjlkdfjg
 
 #Development port
 DEV_PORT=7000
@@ -327,13 +352,25 @@ DB=db.name
 DIALECT=mysql
 ```
 
-Other files with a  `.env` prefix that you may see are:
+Other files with a `.env` prefix that you may see are:
 
 ```sh
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+```
+
+And in your js file use something like:
+
+```js
+if (process.env.NODE_ENV) {
+  require('dotenv').config({
+    path: `${__dirname}/.env.${process.env.NODE_ENV}`,
+  });
+} else {
+  require('dotenv').config();
+}
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -484,9 +521,9 @@ I think this is just your `settings.json` file, possible just for thr project fo
 
 ### Miscellaneous dot files
 
-There are a lot of other _dot_ files that you will see in repositories, but some you will not see because they are in the `.gitignore` file. Take a look at my [Beginner Git Commands repo](https://github.com/Kernix13/beginner-git-commands), spefically fin the INTERMEDIATE_GIT.md file. In the `gitignore` section I have recommended boilerplate versions for that file. 
+There are a lot of other _dot_ files that you will see in repositories, but some you will not see because they are in the `.gitignore` file. Take a look at my [Beginner Git Commands repo](https://github.com/Kernix13/beginner-git-commands), spefically fin the INTERMEDIATE_GIT.md file. In the `gitignore` section I have recommended boilerplate versions for that file.
 
-Not all the file extensions ignored are dotfiles, but are merely the extensions of files to ignore. But that is a good place to check for other files not mentioned above. And always look at repos you found and check to see if they have dotfiles that you haven't see before. 
+Not all the file extensions ignored are dotfiles, but are merely the extensions of files to ignore. But that is a good place to check for other files not mentioned above. And always look at repos you found and check to see if they have dotfiles that you haven't see before.
 
 Here are 3 I recently found:
 
