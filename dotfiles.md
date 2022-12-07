@@ -317,8 +317,8 @@ To use these files:
 1. To access that value in your JS or other files, at the top add:
 
 ```js
-require('donenv').config();
-console.log(process.env.WEATHER_API_KEY);
+require('dotenv').config();
+console.log(process.env.WEATHER_API_KEY); // to confirm it's working
 const WEATHER_URL = process.env.WEATHER_API_KEY;
 // How to use with an API endpoint
 const response = await fetch(
@@ -329,7 +329,18 @@ const response = await fetch(
 - The `.config()` method enables the package to read your `.env` file
 - Your data is now available bu using `process.env`
 - `.env.example` shows users of your project what to create: `WEATHER_API_KEY="Your key here"`
-- THAT'S IT!
+- However, I got an error when I added the code above and added `type="module"` to my HTML file:
+
+> Uncaught ReferenceError: require is not defined
+
+Look into how to use it at:
+
+- https://www.npmjs.com/package/dotenv
+- https://zetcode.com/javascript/dotenv/
+
+I think I need a server or a bundler: "The dotenv is a **_zero-dependency_** module"
+
+> require won't be defined because its a built in node function and not available in the browser. You would need to use a bundler like _WebPack_, _Parcel_ or _Vite_ to build your application so it's useable on the frontend.
 
 I commented out `*.env` files in my `.gitignore` file, but noramlly you would not push them to a public repo. Here are some examples:
 
