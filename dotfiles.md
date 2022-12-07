@@ -310,23 +310,24 @@ ENVIRONMENT VARIABLES:
 
 To use these files:
 
-1. You need to install the dotevn package: `npm i dotenv`
+1. first do `npm init -y`
+1. You need to install the dotenv package: `npm i dotenv`
 1. Create a file in your root called `.env`
 1. Add your variables in there:: `WEATHER_API_KEY=asdsdfgkjhkj2323lkjlkfghj`
 1. To access that value in your JS or other files, at the top add:
 
 ```js
-require('dotevn').config();
+require('donenv').config();
 console.log(process.env.WEATHER_API_KEY);
+const WEATHER_URL = process.env.WEATHER_API_KEY;
 // How to use with an API endpoint
 const response = await fetch(
-  'http://api.openweathermap.org/geo/1.0/zip?zip=' +
-    zip +
-    ',US&appid=API_KEY_HERE'
+  `http://api.openweathermap.org/geo/1.0/zip?zip=${zip},$US&appid=${WEATHER_URL}`
 );
 ```
 
-- Your data is available via `process.env`
+- The `.config()` method enables the package to read your `.env` file
+- Your data is now available bu using `process.env`
 - `.env.example` shows users of your project what to create: `WEATHER_API_KEY="Your key here"`
 - THAT'S IT!
 
@@ -336,6 +337,7 @@ I commented out `*.env` files in my `.gitignore` file, but noramlly you would no
 STATUS=production
 
 # API Keys
+WEATHER_API_KEY=qwerty12345
 API_KEY=aashflkfgduiropowelkgjlkdfjg
 
 #Development port
