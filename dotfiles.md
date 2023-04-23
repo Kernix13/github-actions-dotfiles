@@ -1,6 +1,6 @@
 # Using ESLINT and DOTFILES
 
-Check out Eddie Jaoude repo [docs-1](https://github.com/eddiejaoude/docs-1) for various dot folders
+Check out Eddie Jaoude repo [docs-1](https://github.com/eddiejaoude/docs-1) for various dot folders. Also check out [vscode-icons](https://github.com/vscode-icons/vscode-icons) for a huge amount of dotfiles.
 
 What is the npm package `browser-sync` used for? In place of the LiveServer extension?
 
