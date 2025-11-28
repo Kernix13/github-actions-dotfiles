@@ -13,6 +13,7 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
 1. [Video 3](#video-3)
 1. [Dotfiles](#dotfiles)
    1. [dot github folder](#dot-github-folder)
+   1. [dot gitattributes](#dot-github-folder)
    1. [dot editorconfig](#dot-editorconfig)
    1. [dot prettier files](#dot-prettier-files)
    1. [dot browserslistrc file](#dot-browserslistrc-file)
@@ -184,6 +185,48 @@ Create an issues template
 - [Configuring issue templates for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
 - [About issue and pull request templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates)
 
+I created a ISSUES_TEMPLATE folder inside of .github and added default.md with frontmatter and the markdown for the default issues template:
+
+```md
+---
+name: Default Issue
+about: Use this template for all issues
+title: '[ISSUE]'
+labels: ''
+assignees: ''
+---
+
+## Description
+
+<!-- Please include a clear and detailed description of the issue. You can delete this comment when done. -->
+
+## Steps to Reproduce (if applicable)
+
+<!-- Provide the steps needed to reproduce the issue. Include code, screenshots, or links if relevant. -->
+
+## Expected Behavior
+
+<!-- Describe what you expected to happen -->
+
+## Actual Behavior
+
+<!-- Describe what actually happened -->
+
+## Type of Issue
+
+<!-- Place an x in the [ ] to check off the type of issue -->
+
+- [ ] Bug
+- [ ] Feature request / enhancement
+- [ ] Documentation
+- [ ] Refactor / cleanup
+- [ ] Other
+
+## Additional Notes
+
+<!-- Any extra information you think might help, e.g., environment, browser, API key used (if safe), etc. -->
+```
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### dot husky folder
@@ -201,6 +244,17 @@ npx lint-staged
 ```
 
 - Check out the [Husky docs](https://typicode.github.io/husky/#/) and [Getting Started with Git Hooks and Husky](https://www.git-tower.com/blog/git-hooks-husky/)
+
+## dot gitattributes
+
+See [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
+
+A `.gitattributes` is part of your versioned source code, and contribute to establishing a common Git standard. The .gitattributes file is not "mandatory", but a useful tool in the Git toolbox, one that can be shared safely in a project code base, ...If you want to include things like shell scripts or batch files, you absolutely do need a .gitattributes file - That is from [stackoverflow](https://stackoverflow.com/questions/73086622/is-a-gitattributes-file-really-necessary-for-git)
+
+```
+# Normalize line endings for all text files to LF
+* text=auto eol=lf
+```
 
 ## dot editorconfig
 
