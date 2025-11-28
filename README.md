@@ -12,7 +12,7 @@ My attempt at answering:
 1. How and why do I use them?
 1. What are boilerplate starter files for each?
 
-I know why to add some of the dotfiles, but I do not know how the other work. I also know that some of the files are creating when you install various NPM packages. 
+I know why to add some of the dotfiles, but I do not know how the other work. I also know that some of the files are creating when you install various NPM packages.
 
 ## Files
 
@@ -24,20 +24,22 @@ In the root I have `pull_request_template.md`. In `/workflows` I have `build.yml
 
 ### .husky
 
-I have a `.gitignore` which has what everyone has in it: `_`. Then I have `pre-commit` which also has the same code that everyone has for that file.
+I have a `.gitignore` and everyone has the same thing in it: `_`. Then I have `pre-commit` which also has the same code that everyone has for that file.
 
 ### .vscode
 
-I have `settings.json` for a sample from who-knows-where.
+I have `settings.json` for a sample from who-knows-where. What goes in here?
 
 ### Root folder dotfiles
 
 I have the following:
 
 1. `.editorconfig`: do you need this if you have `.vscode`?
-1. `.eslintrc.json`: I've also seen `.eslintignore` but I do not have that file
+1. `.eslintrc.json`: I've seen this with a `.js` extension. You may also see `eslint.config.mjs`
+1. `.eslintignore`: depends on your project setup
 1. `.prettierignore`: They always seem to have the `build` folder in here but freeCodeCamp has a massive one
 1. `.prettierrc.json`: I've also seen this without any extension and with `.js`
+1. `.stylelintrc.json`: the most basic entry for this file.
 
 ### Markdown files
 

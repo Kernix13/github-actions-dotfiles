@@ -1,6 +1,6 @@
 # Using ESLINT and DOTFILES
 
-Check out Eddie Jaoude repo [docs-1](https://github.com/eddiejaoude/docs-1) for various dot folders. Also check out [vscode-icons](https://github.com/vscode-icons/vscode-icons) for a huge amount of dotfiles.
+~~Check out Eddie Jaoude repo [docs-1](https://github.com/eddiejaoude/docs-1) for various dot folders~~. Also check out [vscode-icons](https://github.com/vscode-icons/vscode-icons) for a huge amount of dotfiles.
 
 What is the npm package `browser-sync` used for? In place of the LiveServer extension?
 
@@ -17,10 +17,10 @@ What is the npm package `browser-sync` used for? In place of the LiveServer exte
    1. [dot prettier files](#dot-prettier-files)
    1. [dot browserslistrc file](#dot-browserslistrc-file)
    1. [dot env file](#dot-env-file)
+   1. [dot eslintignore](#dot-eslintignore)
    1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
    1. [dot vscode folder](#dot-vscode-folder)
    1. [Miscellaneous dot files](#miscellaneous-dot-files)
-1. [Contrast ratio package json file](#contrast-ratio-package-json-file)
 
 ## Video 1
 
@@ -132,20 +132,20 @@ After all that create the config files
 
 dotfiles:
 
-- `.editorconfig`
+- `.editorconfig`: see [editorconfig.org](https://editorconfig.org/)
 - `.eslintrc.json` | see [ESLint docs](https://eslint.org/docs/latest/)
+- .`eslintignore`
 - `.prettierrc` | see [Prettier Configuration File](https://prettier.io/docs/en/configuration.html) - I see this one a lot
 - `.github` folder
 - `.vscode` folder
 - `.husky` folder
-
-Here are some of those file from the repo I was briefly contributing to: [contrast-ratio-repo](https://github.com/jdwilkin4/contrast-ratio-repo)
+- `.stylelint.json`
 
 ### dot github folder
 
 It contain markdown template files, and GitHub actions in YAML files in a `workflows` folder. Check out the [freeeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) for some more detailed files.
 
-`pull_request_template.md`:
+`.github/PULL_REQUEST_TEMPLATE.md`:
 
 ```md
 # Description
@@ -174,6 +174,16 @@ Fixes # (issue)
 - [ ] My changes generate no new warnings
 ```
 
+Create a PR Template:
+
+- [Creating a pull request template for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
+- [GitHub pull request template](https://axolo.co/blog/p/part-3-github-pull-request-template)
+
+Create an issues template
+
+- [Configuring issue templates for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
+- [About issue and pull request templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates)
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 ### dot husky folder
@@ -194,7 +204,7 @@ npx lint-staged
 
 ## dot editorconfig
 
-Check out [EditorConfig](https://editorconfig.org/).
+Check out [EditorConfig](https://editorconfig.org/). I've seen `.editorconfig` files much shorter than this example.
 
 ```s
 # EditorConfig is awesome: https://EditorConfig.org
@@ -248,12 +258,14 @@ coverage
 
 **.prettierrc.json**
 
+I often see the 1st 4 properties, rarely the last 2:
+
 ```json
 {
-  "trailingComma": "es5",
-  "tabWidth": 2,
   "semi": true,
   "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
   "printWidth": 9999,
   "arrowParens": "avoid"
 }
@@ -263,7 +275,7 @@ coverage
 
 ### dot browserslistrc file
 
-This may be only for use with Vue.js projects and the vue-cli package. Check out [Vue CLI Browser Compatibility page](https://cli.vuejs.org/guide/browser-compatibility.html) for more information:
+This may be only for use with Vue.js projects (I'm not certain of that) and the vue-cli package. Check out [Vue CLI Browser Compatibility page](https://cli.vuejs.org/guide/browser-compatibility.html) for more information:
 
 > You will notice a `browserslist` field in `package.json` (or a separate `.browserslistrc` file) specifying a range of browsers the project is targeting. This value will be used by @babel/preset-env and autoprefixer to automatically determine the JavaScript features that need to be transpiled and the CSS vendor prefixes needed.
 
@@ -344,7 +356,7 @@ I think I need a server or a bundler: "The dotenv is a **_zero-dependency_** mod
 
 I commented out `*.env` files in my `.gitignore` file, but noramlly you would not push them to a public repo. Here are some examples:
 
-```sh
+```env
 STATUS=production
 
 # API Keys
@@ -368,6 +380,7 @@ DIALECT=mysql
 Other files with a `.env` prefix that you may see are:
 
 ```sh
+.env.sample
 .env.local
 .env.development.local
 .env.test.local
@@ -387,6 +400,14 @@ if (process.env.NODE_ENV) {
 ```
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+### dot eslintignore
+
+```
+node_modules/
+public/images/
+public/fonts/
+```
 
 ### Wes Bos dot eslint
 
@@ -521,7 +542,7 @@ module.exports = {
 };
 ```
 
-- Check out the [freeCodeCamp eslint.json](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/.eslintrc.json) file and this [example on github](https://github.com/i-ron-y/eslintrc-starter-files/blob/master/.eslintrc.json)
+- Check out this [example on github](https://github.com/i-ron-y/eslintrc-starter-files/blob/master/.eslintrc.json)
 - consider havine a `.eslintignore` file
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
@@ -565,48 +586,6 @@ The `.jshintrc` file looked interesting so I took a look. It is basically a json
   "globals": {
     "window": false,
     "document": false
-  }
-}
-```
-
-<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
-
-## Contrast ratio package json file
-
-> Look into `browser-sync`
-
-```json
-{
-  "name": "contrast-ratio-repo",
-  "version": "1.0.0",
-  "description": "This is an app that checks the color contrast for web accessibility.",
-  "main": "index.js",
-  "scripts": {
-    "start": "browser-sync start --server --files .",
-    "format": "prettier --write .",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jdwilkin4/contrast-ratio-repo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jdwilkin4/contrast-ratio-repo/issues"
-  },
-  "homepage": "https://github.com/jdwilkin4/contrast-ratio-repo#readme",
-  "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "2.7.1"
-  },
-  "lint-staged": {
-    "*.{js,css,md,html,json}": "prettier --write"
-  },
-  "dependencies": {
-    "browser-sync": "^2.27.10"
   }
 }
 ```
