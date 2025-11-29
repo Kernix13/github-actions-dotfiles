@@ -251,16 +251,22 @@ See [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
 
 A `.gitattributes` is part of your versioned source code, and contribute to establishing a common Git standard. The .gitattributes file is not "mandatory", but a useful tool in the Git toolbox, one that can be shared safely in a project code base, ...If you want to include things like shell scripts or batch files, you absolutely do need a .gitattributes file - That is from [stackoverflow](https://stackoverflow.com/questions/73086622/is-a-gitattributes-file-really-necessary-for-git)
 
-```
+```yml
 # Normalize line endings for all text files to LF
 * text=auto eol=lf
+
+# Denote all files that are truly binary and should not be modified
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
 ```
 
 ## dot editorconfig
 
 Check out [EditorConfig](https://editorconfig.org/). I've seen `.editorconfig` files much shorter than this example.
 
-```s
+```yml
 # EditorConfig is awesome: https://EditorConfig.org
 
 # top-most EditorConfig file
