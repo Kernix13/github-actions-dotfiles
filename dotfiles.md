@@ -146,7 +146,11 @@ dotfiles:
 
 It contain markdown template files, and GitHub actions in YAML files in a `workflows` folder. Check out the [freeeCodeCamp repo](https://github.com/freeCodeCamp/freeCodeCamp) for some more detailed files.
 
-`.github/PULL_REQUEST_TEMPLATE.md`:
+1. `.github/PULL_REQUEST_TEMPLATE.md`
+2. `.github/ISSUE_TEMPLATE/`
+3. `.github/FUNDING.yml`
+
+Here is an example PR Template:
 
 ```md
 # Description
@@ -173,6 +177,16 @@ Fixes # (issue)
 - [ ] I have linked this PR to the corresponding issue. [See how to do that here.](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
 - [ ] I have run the project locally and reviewed the code changes
 - [ ] My changes generate no new warnings
+```
+
+Here is an example FUNDING.yml file:
+
+```yml
+# These are supported funding model platforms
+
+github: username
+patreon: username
+custom: https://www.paypal.me/username
 ```
 
 Create a PR Template:
