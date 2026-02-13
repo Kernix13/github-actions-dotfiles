@@ -539,12 +539,12 @@ runs:
 
 - in this block is nested `runs-on`, `strategy`, and `steps`
 - `runs-on`: this job has to run on a server which is hosted by GitHub
-- `steps`: the steps needed in order to run the job - inside are keys of `uses`, `name`, `with`, and `run` 
+- `steps`: the steps needed in order to run the job - inside are keys of `uses`, `name`, `with`, and `run`
   - Check the keywords in the `uses` value and search for them and you will find a repo on it like `actions/checkout`
   - Checkout the account `actions` then search for `checkout`, `setup`, etc.
   - `with`: specifies the different versions of Node (for this example) you want to use and this is where `strategy` comes in
 - `strategy`: aloows you to specify multiple Node versions - they are in an array nested in `matrix` > `node-version` and inside `with` > `node-version` he has `matrix.node-version`
-- `run` commands: an example line would be: 
+- `run` commands: an example line would be:
 
 ```yml
 - run: npm install
@@ -557,16 +557,164 @@ He also mentions writing the units test block so he copied the build block, past
 
 - He created a new branch, add, commit, push - on GitHub create a PR, and then you action will start running since it was set up for PR's
 - If you click on the action while it is running you will see the steps running - the first few are "health" checks - then you see your `run` blocks
-- They will either pass or fail 
+- They will either pass or fail
 - He has it set up for PR's and pushes/merges with the `main` branch
 - Back in VS Code checout to `main`, do `git pull`, create a new branch to test failure
 - He made a small change to his source code to cause a failure - now you can track what has passed and what has failed
 - But even though the tests failed, you can still merge the PR - but you may want to block that ability - see _24:50_ in video, but:
   - Go to the actions repo > braches > Vranch protection rules > set it up there
-- Wait, he did all that somewhere else (watch again) 
+- Wait, he did all that somewhere else (watch again)
 
 ### Docker Image
 
-- He created a new YAML file, copied the code from `integration.yml` and edited it - SKIP (29:00) 
+- He created a new YAML file, copied the code from `integration.yml` and edited it - SKIP (29:00)
 
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+## New Notes
+
+> Ignore everything above because I have not edited yet. Hre are notes from ChatGPT
+
+### YAML spacing rule
+
+> linter.yml
+
+- Spaces only. Never tabs. GitHub will absolutely punish you for tabs.
+- Use 2 spaces per indent. That’s the common convention.
+
+### custom action definitions vs workflow file
+
+- custom action definitions live in a /actions folder and contain:
+  - name
+  - description
+  - runs
+- workflow file line in .github/
+  - .github/workflows/something.yml
+- A workflow runs automation
+- An action is something a workflow uses
+
+### Structure Breakdown (The Only Keywords You Need to Remember)
+
+Top-level:
+
+- name: Just a label
+- on: What triggers it.
+- jobs: You must define at least one job - Each job needs:
+  - a job name (you invent it)
+  - runs-on
+  - steps
+- runs-on: ubuntu-latest -> means "Run this job on a virtual machine provided by GitHub"
+  - Common options: ubuntu-latest, windows-latest, macos-latest
+- steps: Steps are just a list
+- Each step either:
+  - runs a shell command (run)
+  - uses a prebuilt action (uses)
+- a workflow can have multiple jobs, but it doesn’t have to
+
+```
+jobs:
+  build:
+    ...
+  deploy:
+    ...
+```
+
+> Once you add branches, push must become an object, not a string
+> You must always specify runs-on for each job
+
+- push -> branches: [push, pull_request]
+- push -> branches-ignore [main]
+- branches expects a list
+
+```yml
+branches: [main]
+# or the long version:
+branches:
+  - main
+```
+
+> You see the messages: GitHub → Your Repo → Actions tab → Click the workflow → Click the job → View logs
+
+Other easy yaml files for:
+
+```yaml
+on:
+  issues:
+
+on:
+  pull_request:
+
+# filter by activity type
+on:
+  issues:
+    types: [opened]
+
+on:
+  pull_request:
+    types: [opened, closed]
+```
+
+### Common Keywords in Workflows
+
+These are the core ones you’ll see over and over:
+
+- name = label
+- on = trigger
+- jobs = container for work
+- runs-on = required machine
+- steps = list
+- uses = external action
+- run = shell command
+- with
+- env
+
+<div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
+
+```yaml
+---
+name: Lint Code Base
+
+#############################
+# Start the job on all push #
+#############################
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+###############
+# Set the Job #
+###############
+jobs:
+  build:
+    # Name the Job
+    name: Lint Code Base
+    # Set the agent to run on
+    runs-on: ubuntu-latest
+
+    ##################
+    # Load all steps #
+    ##################
+    steps:
+      ##########################
+      # Checkout the code base #
+      ##########################
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper
+          # list of changed files within `super-linter`
+          fetch-depth: 0
+
+      ################################
+      # Run Linter against code base #
+      ################################
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_MARKDOWN: false
+```

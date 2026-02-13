@@ -1,0 +1,13 @@
+name: Push to main
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  good-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push successful
+        run: echo "Push to main detected"
