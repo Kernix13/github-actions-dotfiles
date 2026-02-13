@@ -779,6 +779,8 @@ The most practical beginner workflow to learn next is:
 
 On pull_request.
 
+> `|` allows multiline text
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
 <!--
