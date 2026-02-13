@@ -4,6 +4,8 @@
 
 What is the npm package `browser-sync` used for? In place of the LiveServer extension?
 
+Look into what `.devcontainer` is and what goes in it and what it is for.
+
 <div id="back-to-top"></div>
 
 ## Table of Contents

@@ -668,8 +668,120 @@ These are the core ones you’ll see over and over:
 - with
 - env
 
+> You don’t add workflows just because you can. You add them when they automate something useful.
+
+### Informational / Logging
+
+Example:
+
+- Log when someone opens an issue
+- Log when a PR is merged
+- Echo something for visibility
+
+This is mostly learning/demo value.
+
+### Automation
+
+More useful:
+
+- Add labels automatically
+- Assign reviewers
+- Close stale issues
+- Block PR if conditions fail
+- Enforce naming conventions
+- Check commit messages
+
+### Interaction / Community
+
+That one responds when someone opens their first issue or PR and posts a welcome message. That’s useful for:
+
+- Open source projects
+- Public repos
+- Growing a community
+
+## actions for issues and PRs
+
+When someone contributes to open source:
+
+1. They don’t know your conventions
+2. They don’t know if their PR was seen
+3. They don’t know what happens next
+
+Automation gives:
+
+- Immediate feedback
+- Clear structure
+- Professional feel
+- Less manual work for you
+
+`uses: actions/github-script@v7`
+
+Format always looks like:
+
+```yaml
+uses: owner/repo@version
+```
+
+- owner → actions
+- repo → github-script
+- version → v7
+
+Search for:
+
+- "comment on issue"
+- "label PR"
+- "lint"
+- "auto assign"
+
+### Why with: and script:?
+
+Every action can accept inputs.
+
+```yaml
+- uses: owner/repo@version
+  with:
+    inputName: value
+
+  with:
+  script: |
+    github.rest.issues.createComment(...)
+```
+
+- The with: block passes parameters to that action.
+- In github-script, one of its inputs is called script.
+
+### Run npm install + build on PR
+
+Because your local machine passing ≠ someone else’s environment passing.
+
+CI proves it builds cleanly.
+
+Example idea (not writing full file):
+
+- checkout repo
+- setup node
+- run npm ci
+- run npm run build
+
+### Professional
+
+- Lint on PR
+- Run tests on PR
+- Require status checks before merge
+
+> Linkters only take care of linting if someone runs them locally - GitHub Actions enforces it.
+
+The most practical beginner workflow to learn next is:
+
+- 👉 Run npm ci
+- 👉 Run npm run lint
+- 👉 Run npm run build
+
+On pull_request.
+
 <div align="right">&#8673; <a href="#back-to-top" title="Table of Contents">Back to Top</a></div>
 
+<!--
 ```yaml
 ---
 name: Lint Code Base
@@ -718,3 +830,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_MARKDOWN: false
 ```
+-->
