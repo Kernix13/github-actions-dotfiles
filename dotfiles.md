@@ -21,6 +21,7 @@ Look into what `.devcontainer` is and what goes in it and what it is for.
    1. [dot browserslistrc file](#dot-browserslistrc-file)
    1. [dot env file](#dot-env-file)
    1. [dot eslintignore](#dot-eslintignore)
+   1. [dot npmrc](#dot-npmrc)
    1. [Wes Bos dot eslint](#wes-bos-dot-eslint)
    1. [dot vscode folder](#dot-vscode-folder)
    1. [Miscellaneous dot files](#miscellaneous-dot-files)
@@ -484,6 +485,17 @@ node_modules/
 public/images/
 public/fonts/
 ```
+
+### dot npmrc
+
+The `.npmrc` file is a configuration file for the npm command-line tool, allowing customization of registry URLs, authentication tokens for private packages, proxy settings, and other package installation behaviors. It can exist at the project level, user level, or globally to manage settings for Node.js projects.
+
+- Syntax: It is an ini-formatted file where lines starting with `;` or `#` are comments
+- It defines how npm behaves, such as specifying where packages should be installed from.
+- Project Config: `<project root>/.npmrc`
+- Setting a Registry: `registry=https://npmjs.org`
+- Authentication: `//registry.npmjs.org/:_authToken=YOUR_TOKEN`
+- Scoped Packages: `@myscope:registry=https://mycustomregistry.example.org`
 
 ### Wes Bos dot eslint
 
