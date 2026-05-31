@@ -396,6 +396,11 @@ ENVIRONMENT VARIABLES:
 - Use them to store config or settings for your app (sensitive/secret information) - information that should not be seen by the end user
 - **Eaxamples**: API keys, database credentials, login credentials, URLs for accessing 3rd-party data, etc.
 - Main benefit is to make your app easily supported in different environments
+- `.env`: loaded in all cases (base default variables)
+- `.env.local`: loaded in all cases but local only
+- `.env.development`, `.env.production`: loaded in that mode only
+- `.env.development.local`, `.env.production.local`: loaded in that mode only and local only
+- `.env.test`: test specific config
 
 To use these files:
 
